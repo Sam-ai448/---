@@ -15,8 +15,8 @@ from PIL import ImageTk, Image
 win = Tk()
 win.geometry("1024x768")
 win.resizable(width=True, height=True)
-win.title("各國地理問答-重製版1.0")
-myFont = fnt.Font(family='新細明體', size=20, weight='bold')
+win.title("各國地理問答-重製版2.0")
+myFont = fnt.Font(family='微軟正黑體', size=25, weight='bold')
 questions=pd.read_csv("questions.csv",encoding="ansi")
 #造出隨機序列
 qzQueue=list(range(len(questions)))
@@ -83,7 +83,7 @@ def game_main():
         win.mainloop()
     else:
         # 若題目已經做完的情況
-        Lbl_title=Label(text="各國地理問答",font=myFont,width=50, height=2)
+        Lbl_title=Label(text="各國地理問答-重製版2.0",font=myFont,width=50, height=2)
         Lbl_title.grid(row=0, column=0, columnspan=4)
         qz_number=0
         Btn_startgame=Button(text="離開",font=myFont, width=5, height=2, fg="black", command=lambda: game_main())
@@ -94,7 +94,7 @@ def game_main():
         
         Lbl_title.grid(row=0, column=0, columnspan=4)
         
-        Btn_startgame = Button(text="進入", font=myFont, width=5, height=2, fg="black", command=lambda: game_main())
+        Btn_startgame = Button(text="開始", font=myFont, width=5, height=2, fg="black", command=lambda: game_main())
         Btn_startgame.grid(row=4, column=0)
         Btn_quitgame = Button(text="離開", font=myFont, width=5, height=2, fg="black", command=lambda: win.destroy())
         Btn_quitgame.grid(row=4, column=2)
@@ -104,7 +104,7 @@ Lbl_title=Label(text="各國地理問答",font=myFont,width=50, height=2)
 
 Lbl_title.grid(row=0, column=0, columnspan=4)
 qz_number=0
-Btn_startgame=Button(text="進入",font=myFont, width=5, height=2, fg="black", command=lambda: game_main())
+Btn_startgame=Button(text="開始",font=myFont, width=5, height=2, fg="black", command=lambda: game_main())
 Btn_startgame.grid(row=4, column=0)
 Btn_quitgame=Button(text="離開",font=myFont, width=5, height=2, fg="black", command=lambda: win.destroy())
 Btn_quitgame.grid(row=4, column=2)
@@ -113,8 +113,8 @@ win.mainloop()
 win = Tk()
 win.geometry("1024x768")
 win.resizable(width=True, height=True)
-win.title("各國地理問答-重製版1.0")
-myFont = fnt.Font(family='新細明體', size=20, weight='black')
+win.title("各國地理問答-重製版2.0")
+myFont = fnt.Font(family='微軟正黑體', size=25, weight='black')
 #造出隨機序列
 qzQueue=list(range(len(questions)))
 random.shuffle(qzQueue)
@@ -132,8 +132,9 @@ win.mainloop()
 
 Lbl_title.grid(row=0, column=0, columnspan=4)
 
-Btn_startgame = Button(text="進入", font=myFont, width=5, height=2, fg="black")
+Btn_startgame = Button(text="開始", font=myFont, width=5, height=2, fg="black")
 Btn_startgame.grid(row=4, column=0)
 Btn_quitgame = Button(text="離開", font=myFont, width=5, height=2, fg="black", command=lambda: win.destroy())
 Btn_quitgame.grid(row=4, column=2)
+plt.show()
 win.mainloop()
