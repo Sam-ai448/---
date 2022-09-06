@@ -1,0 +1,23 @@
+# ---
+from tkinter import Tk, simpledialog, messagebox
+print('Ask the Expert - Capital Cities of the World')
+root = Tk()
+root.withdraw
+the_world = {}
+def read_from_file():
+    with open('capital_data.txt','r') as file:
+        for line in file:
+            line = line.rstrip('\n')
+            country, city = line.split('/')
+            the_world[country] = city
+def show():
+    while True:
+        query_country = simpledialog.askstring('country', '請輸入國家名稱:')
+
+        if query_country in the_world:
+            result = the_world[query_country]
+            messagebox.showinfo('Answer',
+                            '國家名稱:' + query_country + ' 首都 ' + result +  '!')
+    root.mainloop()
+read_from_file()
+show()
